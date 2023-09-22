@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>error</title>
 </head>
 <body>
-$END$
+    <h1 align="center">죄송합니다ㅠㅠ 오류가 발생하였습니다. message : [[${errorMessage}]]</h1>
+<!-- ${} 중괄호 내부의 부분은 서버 측 템플릿 엔진에서 변수나 표현식을 나타냅니다.
+이 경우 'errorMessage'라는 변수나 속성의 값을 출력하려는 것.
+대괄호 [[...]]으로 묶여있으므로 이 부분은 템플릿 엔진에서 해당 변수의 값을 가져와 풀력하는 부분이다.-->
 </body>
 </html>
