@@ -18,7 +18,7 @@ public class MessageConfig {
         ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
         /* 인터페이스 ResourceLoaderAware 를 구현하는 AbstractResourceBasedMessageSource를
         * 상속 하는 ReloadableResourceBundleMessageSource 클래스*/
-        messageSource.setBasename("class:/messages/messages");
+        messageSource.setBasename("classpath:/messages/messages");
         /* public void setBasename(String basename) {
 		setBasenames(basename);
 		 - 메세지 프로퍼티파일의 위치와 이름을 지정한다.*/

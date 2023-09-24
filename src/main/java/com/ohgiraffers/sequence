@@ -1,0 +1,29 @@
+
+** 기본 설정
+1. SecurityConfig 설정 - 로그인, 로그아웃 설정 포함
+2. AuthenticationService 설정 - 사용자 정보를 인증하고 로드하는데 사용
+순서상 뒤에 로그인 시 필요하지만 SercurityConfig 설정을 위해 미리 작성
+3. GlobalExceptionHandler 설정 - exception 처리하는 메소드 o / @ControllerAdvice로 전역적 커버
+4. MessageConfig 설정 - 다국어 설정 i18n, alert창에 나오는 언어 설정
+
+** 주요 설정
+5. MemberController 설정 - Model과 view 다리 역할 / Service와 연결하여 얻은 정보를 view로 반환한다.
+리소스에 member와 매핑한다.
+6. MemberService 설정 - Controller와 Mapper의 다리 역할 / 실질적인 비즈니스 로직을 구현하는 곳이다.
+여기서 트랜잭션을 통해 commit/rollback 한다.
+dao 역할을 하는 Mapper와 연결되어 있으며 회원가입, 정보 수정, 탈퇴 등의 비즈니스 로직을 구축한다.
+7. MemberMapper 설정 - 인터페이스로 매퍼로 기능한다. 리소스의 mapper 파일에서 db와 연동한다.
+dto를 사용하여 가져오기 때문에 dto와 연결되어 있다. service에서 mapper로 request를 요청하면 mapper.xml과
+연결하여 db 정보를 crud 한다.
+8. dto 설정 - member와 연결이 필요할 땐 MemberDTO, member 권한과 연결이 필요할 땐 MemberRoleDTO,
+member 인증(로그인)과 연결이 필요할 땐 AuthenticationDTO와 연결된다.
+
+** 주요 설정2
+위에 클래스들을 View로 반환하기 위해 resouces 패키지 사용
+1. messages - 언어 설정
+2. ** templates - 보여지는 view.html 설정
+3. ** static - js파일 설정(이벤트)
+4. *** mapper - DB에서 CRUD하기 때문에 가장 중요하다.
+
+
+index (메인 페이지 화면) -> 로그인 화면 -> 회원 가입 화면 ->

@@ -1,0 +1,10 @@
+controller가 ==> dto ==> service(=model)를 부르고
+service(=model)가 mapper를 부른다.
+mapper(dao)는 mapper.xml 파일을 불러 db에 접근한다.
+
+controller는 view와 도메인 model의 데이터를 주고 받을 때 별도의 dto를 사용
+=> 도메인 객체를 view에 직접 전달할 수 있지만, 민감한 도메인 비즈니스 기능이 노출 될 우려
+=> model과 view 사이에 의존성이 생기기 때문에
+
+
+principal = 현재 로그인 한 사용자
